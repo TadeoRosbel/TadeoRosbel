@@ -1,5 +1,7 @@
+/* Carlos Alfredo Niño Martínez , 4D, 24898 */
+
 /* =========================
-VARIABLES
+   VARIABLES
 ========================= */
 
 :root{
@@ -9,7 +11,7 @@ VARIABLES
 }
 
 /* =========================
-RESET
+   RESET
 ========================= */
 
 *{
@@ -23,7 +25,7 @@ height:100%;
 }
 
 /* =========================
-BODY
+   BODY
 ========================= */
 
 body{
@@ -42,7 +44,7 @@ opacity:0;
 }
 
 /* =========================
-TITULOS
+   TITULOS
 ========================= */
 
 h1,h2,h3{
@@ -50,7 +52,7 @@ color:var(--dorado);
 }
 
 /* =========================
-NAVBAR
+   NAVBAR
 ========================= */
 
 nav{
@@ -74,7 +76,7 @@ line-height:1.3;
 }
 
 /* =========================
-MARCA
+   MARCA
 ========================= */
 
 .marca{
@@ -85,7 +87,7 @@ text-transform:uppercase;
 }
 
 /* =========================
-DROPDOWN
+   DROPDOWN
 ========================= */
 
 .dropdown{
@@ -94,7 +96,7 @@ display:inline-block;
 }
 
 /* =========================
-BOTONES NAV
+   BOTONES NAV
 ========================= */
 
 .dropbtn{
@@ -119,7 +121,7 @@ transform:scale(1.05);
 }
 
 /* =========================
-MENU DESPLEGABLE (CLICK)
+   MENU DESPLEGABLE (CLICK)
 ========================= */
 
 .dropdown-content{
@@ -150,15 +152,14 @@ color:#333;
 font-size:14px;
 }
 
-.dropdown-content a:hover
-
+/* CORRECCIÓN ESPECÍFICA PARA QUE NO SE SALGA EL IDIOMA */
 .language-menu{
 left:0;
 right:auto;
 }
 
 /* =========================
-HERO
+   HERO
 ========================= */
 
 .hero{
@@ -210,7 +211,7 @@ font-size:18px;
 }
 
 /* =========================
-BOTON PRINCIPAL
+   BOTON PRINCIPAL
 ========================= */
 
 .btn{
@@ -234,7 +235,7 @@ transform:scale(1.08);
 }
 
 /* =========================
-FOOTER
+   FOOTER
 ========================= */
 
 footer{
@@ -246,7 +247,7 @@ margin-top:auto;
 }
 
 /* =========================
-RESPONSIVE
+   RESPONSIVE
 ========================= */
 
 @media (max-width:768px){

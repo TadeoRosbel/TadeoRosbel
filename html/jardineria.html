@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Jardinería - TA Service</title>
+<title data-key="title_jardineria_page">Jardinería - TA Service</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,7 +16,7 @@
 
 <nav>
   <h1>
-    Servicios Técnicos<br>
+    <span data-key="nav_title">Servicios Técnicos</span><br>
     <span class="marca">TA Service</span>
   </h1>
 </nav>
@@ -24,33 +24,33 @@
 <section class="servicio-detalle">
 
   <div class="columna info">
-    <h2><i class="fa-solid fa-seedling"></i> Jardinería</h2>
+    <h2><i class="fa-solid fa-seedling"></i> <span data-key="srv_jardineria">Jardinería</span></h2>
 
-    <p>
+    <p data-key="jardineria_desc">
       Ofrecemos servicios de cuidado y diseño de jardines, incluyendo poda, siembra y mantenimiento, 
       para que tus espacios verdes luzcan siempre saludables y atractivos.
     </p>
 
     <ul>
-      <li>Poda de árboles y arbustos</li>
-      <li>Siembra y mantenimiento de césped</li>
-      <li>Riego y fertilización</li>
-      <li>Diseño de jardines</li>
-      <li>Mantenimiento de plantas ornamentales</li>
+      <li data-key="jardineria_item1">Poda de árboles y arbustos</li>
+      <li data-key="jardineria_item2">Siembra y mantenimiento de césped</li>
+      <li data-key="jardineria_item3">Riego y fertilización</li>
+      <li data-key="jardineria_item4">Diseño de jardines</li>
+      <li data-key="jardineria_item5">Mantenimiento de plantas ornamentales</li>
     </ul>
 
     <div class="botones">
       <a href="servicios.html" class="btn-regresar">
-        <i class="fa-solid fa-arrow-left"></i> Regresar
+        <i class="fa-solid fa-arrow-left"></i> <span data-key="btn_regresar">Regresar</span>
       </a>
 
       <div class="dropdown">
         <button class="dropbtn" type="button">
-          <i class="fa-solid fa-comments"></i> Contáctame
+          <i class="fa-solid fa-comments"></i> <span data-key="nav_contact">Contáctame</span>
         </button>
 
         <div class="dropdown-content">
-          <a href="tel:8130560145"><i class="fa-solid fa-phone"></i> Llamar</a>
+          <a href="tel:8130560145"><i class="fa-solid fa-phone"></i> <span data-key="nav_call">Llamar</span></a>
           <a href="https://wa.me/528130560145" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
         </div>
       </div>
@@ -63,10 +63,12 @@
 
 </section>
 
-<footer>
+<footer data-key="footer">
   © 2026 Servicios Técnicos Rosbel Tadeo
 </footer>
 
+<script src="../js/languages.js"></script>
+<script src="../js/translate.js"></script>
 <script src="../js/transicion.js"></script>
 </body>
 </html>

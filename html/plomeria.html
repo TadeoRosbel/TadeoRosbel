@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Plomería - TA Service</title>
+<title data-key="title_plomeria_page">Plomería - TA Service</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
 
@@ -17,50 +17,46 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 
 <body>
 
-<!-- NAV -->
 <nav>
   <h1>
-    Servicios Técnicos<br>
+    <span data-key="nav_title">Servicios Técnicos</span><br>
     <span class="marca">TA Service</span>
   </h1>
 </nav>
 
-<!-- SECCIÓN -->
 <section class="servicio-detalle">
 
-  <!-- IZQUIERDA -->
   <div class="columna info">
-    <h2><i class="fa-solid fa-toolbox"></i> Plomería</h2>
+    <h2><i class="fa-solid fa-toolbox"></i> <span data-key="srv_plomeria">Plomería</span></h2>
 
-    <p>
+    <p data-key="plomeria_desc">
       Realizamos trabajos de plomería para solucionar fugas, instalaciones
       y reparaciones en tuberías, llaves y sistemas de agua. Garantizamos 
       un servicio eficiente para evitar desperdicio y daños en tu propiedad.
     </p>
 
     <ul>
-      <li>Reparación de fugas</li>
-      <li>Instalación de tuberías</li>
-      <li>Cambio de llaves</li>
-      <li>Destape de drenajes</li>
-      <li>Mantenimiento de sistemas de agua</li>
+      <li data-key="plomeria_item1">Reparación de fugas</li>
+      <li data-key="plomeria_item2">Instalación de tuberías</li>
+      <li data-key="plomeria_item3">Cambio de llaves</li>
+      <li data-key="plomeria_item4">Destape de drenajes</li>
+      <li data-key="plomeria_item5">Mantenimiento de sistemas de agua</li>
     </ul>
 
-    <!-- BOTONES -->
     <div class="botones">
 
       <a href="servicios.html" class="btn-regresar">
-        <i class="fa-solid fa-arrow-left"></i> Regresar
+        <i class="fa-solid fa-arrow-left"></i> <span data-key="btn_regresar">Regresar</span>
       </a>
 
       <div class="dropdown">
         <button class="dropbtn" type="button">
-          <i class="fa-solid fa-comments"></i> Contáctame
+          <i class="fa-solid fa-comments"></i> <span data-key="nav_contact">Contáctame</span>
         </button>
 
         <div class="dropdown-content">
           <a href="tel:8130560145">
-            <i class="fa-solid fa-phone"></i> Llamar
+            <i class="fa-solid fa-phone"></i> <span data-key="nav_call">Llamar</span>
           </a>
 
           <a href="https://wa.me/528130560145" target="_blank">
@@ -74,18 +70,18 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 
   </div>
 
-  <!-- DERECHA -->
   <div class="columna imagen">
     <img src="../img/plomeria.jpg" alt="Plomería">
   </div>
 
 </section>
 
-<!-- FOOTER -->
-<footer>
+<footer data-key="footer">
   © 2026 Servicios Técnicos Rosbel Tadeo
 </footer>
 
+<script src="../js/languages.js"></script>
+<script src="../js/translate.js"></script>
 <script src="../js/transicion.js"></script>
 
 </body>

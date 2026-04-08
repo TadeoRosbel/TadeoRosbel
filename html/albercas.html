@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mantenimiento de Albercas - TA Service</title>
+<title data-key="title_albercas_page">Mantenimiento de Albercas - TA Service</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,7 +16,7 @@
 
 <nav>
   <h1>
-    Servicios Técnicos<br>
+    <span data-key="nav_title">Servicios Técnicos</span><br>
     <span class="marca">TA Service</span>
   </h1>
 </nav>
@@ -24,33 +24,33 @@
 <section class="servicio-detalle">
 
   <div class="columna info">
-    <h2><i class="fa-solid fa-water"></i> Mantenimiento de Albercas</h2>
+    <h2><i class="fa-solid fa-water"></i> <span data-key="srv_albercas">Mantenimiento de Albercas</span></h2>
 
-    <p>
+    <p data-key="albercas_desc">
       Nos encargamos de la limpieza, mantenimiento y tratamiento de agua de albercas, 
       asegurando un espacio seguro y saludable para tu familia.
     </p>
 
     <ul>
-      <li>Limpieza y desinfección de agua</li>
-      <li>Revisión y reparación de bombas y filtros</li>
-      <li>Ajuste de químicos</li>
-      <li>Mantenimiento de equipos auxiliares</li>
-      <li>Revisión de seguridad y accesorios</li>
+      <li data-key="albercas_item1">Limpieza y desinfección de agua</li>
+      <li data-key="albercas_item2">Revisión y reparación de bombas y filtros</li>
+      <li data-key="albercas_item3">Ajuste de químicos</li>
+      <li data-key="albercas_item4">Mantenimiento de equipos auxiliares</li>
+      <li data-key="albercas_item5">Revisión de seguridad y accesorios</li>
     </ul>
 
     <div class="botones">
       <a href="servicios.html" class="btn-regresar">
-        <i class="fa-solid fa-arrow-left"></i> Regresar
+        <i class="fa-solid fa-arrow-left"></i> <span data-key="btn_regresar">Regresar</span>
       </a>
 
       <div class="dropdown">
         <button class="dropbtn" type="button">
-          <i class="fa-solid fa-comments"></i> Contáctame
+          <i class="fa-solid fa-comments"></i> <span data-key="nav_contact">Contáctame</span>
         </button>
 
         <div class="dropdown-content">
-          <a href="tel:8130560145"><i class="fa-solid fa-phone"></i> Llamar</a>
+          <a href="tel:8130560145"><i class="fa-solid fa-phone"></i> <span data-key="nav_call">Llamar</span></a>
           <a href="https://wa.me/528130560145" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
         </div>
       </div>
@@ -63,10 +63,12 @@
 
 </section>
 
-<footer>
+<footer data-key="footer">
   © 2026 Servicios Técnicos Rosbel Tadeo
 </footer>
 
+<script src="../js/languages.js"></script>
+<script src="../js/translate.js"></script>
 <script src="../js/transicion.js"></script>
 </body>
 </html>
