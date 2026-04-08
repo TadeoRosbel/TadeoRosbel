@@ -64,3 +64,24 @@ d.classList.remove("active");
 });
 }
 });
+
+
+/* =========================
+ANIMACIONES SCROLL
+========================= */
+
+const elementos = document.querySelectorAll(".animar");
+
+const mostrar = () => {
+  elementos.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    const pantalla = window.innerHeight;
+
+    if (top < pantalla - 100) {
+      el.classList.add("visible");
+    }
+  });
+};
+
+window.addEventListener("scroll", mostrar);
+mostrar();

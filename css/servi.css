@@ -1,7 +1,8 @@
+/* Carlos Alfredo Niño Martínez , 4D, 24898 */
+
 /* =========================
    VARIABLES
 ========================= */
-
 :root{
   --azul-marino:#0b1f3a;
   --dorado:#B8962E;
@@ -11,7 +12,6 @@
 /* =========================
    RESET
 ========================= */
-
 *{
   margin:0;
   padding:0;
@@ -29,7 +29,6 @@ body{
 /* =========================
    NAV
 ========================= */
-
 nav{
   background:var(--azul-marino);
   color:white;
@@ -51,7 +50,6 @@ nav h1{
 /* =========================
    SECCIÓN
 ========================= */
-
 .servicio-detalle{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -66,9 +64,8 @@ nav h1{
 }
 
 /* =========================
-   INFO
+   INFO - CORREGIDO OVERFLOW
 ========================= */
-
 .info{
   position:relative;
   color:white;
@@ -76,7 +73,10 @@ nav h1{
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
-  overflow:hidden;
+  
+  /* IMPORTANTE: Cambiamos a visible para que el dropdown no se corte */
+  overflow: visible !important; 
+  z-index: 10;
 }
 
 .info::before{
@@ -84,11 +84,13 @@ nav h1{
   position:absolute;
   inset:0;
   background:rgba(0,0,0,0.6);
+  z-index: 1;
 }
 
-.info *{
+/* Aseguramos que el contenido esté sobre el fondo negro */
+.info > * {
   position:relative;
-  z-index:1;
+  z-index: 2;
 }
 
 .info h2{
@@ -104,6 +106,7 @@ nav h1{
 
 .info ul{
   list-style:none;
+  margin-bottom: 20px;
 }
 
 .info ul li{
@@ -114,15 +117,16 @@ nav h1{
 /* =========================
    BOTONES
 ========================= */
-
 .botones{
   display:flex;
   gap:15px;
   align-items:center;
   margin-top:30px;
+  position:relative;
+  /* Z-index alto para que el menú flote sobre todo */
+  z-index: 999; 
 }
 
-/* regresar */
 .btn-regresar{
   padding:12px 20px;
   background:var(--dorado);
@@ -131,13 +135,16 @@ nav h1{
   border-radius:8px;
   font-weight:bold;
   transition:0.3s;
+  text-align: center;
 }
 
 .btn-regresar:hover{
   background:white;
 }
 
-/* dropdown */
+/* =========================
+   DROPDOWN - POSICIONAMIENTO FIJO EN MÓVIL
+========================= */
 .dropdown{
   position:relative;
 }
@@ -152,51 +159,62 @@ nav h1{
   cursor:pointer;
 }
 
-/* menú oculto bien hecho */
 .dropdown-content{
-  position:absolute;
-  top:100%;
-  left:0;
-  background:white;
-  min-width:180px;
-  border-radius:8px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 10px;
+  
+  background: #f0f0f0; /* Color gris claro como en tu imagen */
+  width: 220px;
+  
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 
-  opacity:0;
-  visibility:hidden;
-  transform:translateY(10px);
-  transition:0.25s;
-  z-index:999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: 0.3s ease;
+  
+  /* El z-index más alto de todos */
+  z-index: 999999; 
 }
 
 .dropdown-content a{
-  display:block;
-  padding:12px;
+  display:flex;
+  align-items: center;
+  gap: 10px;
+  padding:15px;
   text-decoration:none;
   color:black;
   font-weight:bold;
+  border-bottom:1px solid #ddd;
+}
+
+.dropdown-content a:last-child{
+  border-bottom:none;
 }
 
 .dropdown-content a:hover{
-  background:var(--gris);
+  background: #e0e0e0;
 }
 
-/* mostrar */
-.dropdown:hover .dropdown-content{
+.dropdown.active .dropdown-content{
   opacity:1;
   visibility:visible;
-  transform:translateY(0);
+  transform: translateY(0);
 }
 
 /* =========================
    IMAGEN
 ========================= */
-
 .imagen{
   display:flex;
   justify-content:center;
   align-items:center;
   background:#000;
+  position:relative;
+  z-index: 1; /* Imagen en nivel bajo */
 }
 
 .imagen img{
@@ -209,29 +227,40 @@ nav h1{
 /* =========================
    FOOTER
 ========================= */
-
 footer{
   background:var(--azul-marino);
   color:white;
   text-align:center;
   padding:15px;
+  position: relative;
+  z-index: 5;
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
-
 @media(max-width:768px){
   .servicio-detalle{
     grid-template-columns:1fr;
   }
 
-  .imagen img{
-    width:100%;
+  .columna{
+    padding: 30px 20px;
   }
 
   .botones{
     flex-direction:column;
-    align-items:flex-start;
+    align-items: stretch;
+  }
+
+  .btn-regresar, .dropbtn {
+    width: 100%;
+  }
+
+  .dropdown-content {
+    width: 100%;
+    position: absolute; /* Aseguramos que flote sobre el contenido de abajo */
+    left: 0;
+    top: 100%;
   }
 }
