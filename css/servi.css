@@ -1,12 +1,14 @@
 /* Carlos Alfredo Niño Martínez , 4D, 24898 */
 
 /* =========================
-   VARIABLES
+   VARIABLES (NUEVAS 🔥)
 ========================= */
 :root{
-  --azul-marino:#0b1f3a;
-  --dorado:#B8962E;
-  --gris:#f5f5f5;
+  --negro:#000000;
+  --azul-oscuro:#071A26;
+  --turquesa:#39D2E6;
+  --turquesa-suave:#2C8CA3;
+  --blanco:#F2F2F2;
 }
 
 /* =========================
@@ -18,23 +20,45 @@
   box-sizing:border-box;
 }
 
+/* =========================
+   BODY PRO
+========================= */
 body{
   font-family:'Cinzel', serif;
-  background:var(--gris);
   display:flex;
   flex-direction:column;
   min-height:100vh;
+
+  background-image:url("../img/fondo.jpg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  position:relative;
+  z-index:0;
+
+  opacity:1;
+  transition:opacity 0.4s ease;
+}
+
+/* overlay oscuro */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  z-index:-1;
 }
 
 /* =========================
    NAV
 ========================= */
 nav{
-  background:var(--azul-marino);
-  color:white;
+  background:linear-gradient(90deg, var(--azul-oscuro), var(--negro));
+  color:var(--blanco);
   padding:15px;
   text-align:center;
-  border-bottom:2px solid var(--dorado);
+  border-bottom:2px solid var(--turquesa);
 }
 
 nav h1{
@@ -42,7 +66,7 @@ nav h1{
 }
 
 .marca{
-  color:var(--dorado);
+  color:var(--turquesa);
   letter-spacing:3px;
   text-transform:uppercase;
 }
@@ -64,37 +88,39 @@ nav h1{
 }
 
 /* =========================
-   INFO - CORREGIDO OVERFLOW
+   INFO (CRISTAL TURQUESA 🔥)
 ========================= */
 .info{
   position:relative;
-  color:white;
-  background-image:url("../img/fondo.jpg");
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  
-  /* IMPORTANTE: Cambiamos a visible para que el dropdown no se corte */
-  overflow: visible !important; 
+  color:var(--blanco);
+
+  background:rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
+
+  border-radius:15px;
+  padding:40px;
+
+  box-shadow:0 0 25px rgba(57,210,230,0.15);
+
+  overflow: visible !important;
   z-index: 10;
 }
 
-.info::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.6);
-  z-index: 1;
+/* animación */
+.info h2,
+.info p,
+.info ul{
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUp 0.6s ease forwards;
 }
 
-/* Aseguramos que el contenido esté sobre el fondo negro */
-.info > * {
-  position:relative;
-  z-index: 2;
-}
+.info h2{ animation-delay:0.1s; }
+.info p{ animation-delay:0.2s; }
+.info ul{ animation-delay:0.3s; }
 
 .info h2{
-  color:var(--dorado);
+  color:var(--turquesa);
   font-size:30px;
   margin-bottom:20px;
 }
@@ -106,7 +132,7 @@ nav h1{
 
 .info ul{
   list-style:none;
-  margin-bottom: 20px;
+  margin-bottom:20px;
 }
 
 .info ul li{
@@ -115,7 +141,7 @@ nav h1{
 }
 
 /* =========================
-   BOTONES
+   BOTONES PRO 🔥
 ========================= */
 .botones{
   display:flex;
@@ -123,72 +149,80 @@ nav h1{
   align-items:center;
   margin-top:30px;
   position:relative;
-  /* Z-index alto para que el menú flote sobre todo */
-  z-index: 999; 
+  z-index:999;
 }
 
-.btn-regresar{
+.btn-regresar,
+.dropbtn{
   padding:12px 20px;
-  background:var(--dorado);
-  color:black;
-  text-decoration:none;
-  border-radius:8px;
+
+  background:linear-gradient(145deg, var(--turquesa), var(--turquesa-suave));
+  color:#000;
+
+  border:none;
+  border-radius:30px;
   font-weight:bold;
-  transition:0.3s;
-  text-align: center;
+  cursor:pointer;
+  text-decoration:none;
+
+  transition:all 0.3s ease;
 }
 
-.btn-regresar:hover{
-  background:white;
+/* hover glow */
+.btn-regresar:hover,
+.dropbtn:hover{
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 0 15px var(--turquesa);
+}
+
+/* click */
+.btn-regresar:active,
+.dropbtn:active{
+  transform:scale(0.95);
 }
 
 /* =========================
-   DROPDOWN - POSICIONAMIENTO FIJO EN MÓVIL
+   DROPDOWN
 ========================= */
 .dropdown{
   position:relative;
 }
 
-.dropbtn{
-  padding:12px 20px;
-  background:var(--dorado);
-  color:black;
-  border:none;
-  border-radius:8px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
 .dropdown-content{
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: 10px;
-  
-  background: #f0f0f0; /* Color gris claro como en tu imagen */
-  width: 220px;
-  
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  position:absolute;
+  top:100%;
+  left:0;
+  margin-top:10px;
 
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: 0.3s ease;
-  
-  /* El z-index más alto de todos */
-  z-index: 999999; 
+  background:rgba(10,40,55,0.95);
+  backdrop-filter: blur(6px);
+
+  width:220px;
+  border-radius:12px;
+
+  box-shadow:0 15px 40px rgba(0,0,0,0.6);
+
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(10px) scale(0.95);
+  transition:all 0.3s ease;
+
+  z-index:999999;
 }
 
 .dropdown-content a{
   display:flex;
-  align-items: center;
-  gap: 10px;
+  align-items:center;
+  gap:10px;
+
   padding:15px;
   text-decoration:none;
-  color:black;
+  color:var(--blanco);
   font-weight:bold;
-  border-bottom:1px solid #ddd;
+
+  border-bottom:1px solid rgba(255,255,255,0.1);
+
+  transition:0.2s;
 }
 
 .dropdown-content a:last-child{
@@ -196,44 +230,60 @@ nav h1{
 }
 
 .dropdown-content a:hover{
-  background: #e0e0e0;
+  background:rgba(57,210,230,0.2);
+  transform:translateX(5px);
 }
 
 .dropdown.active .dropdown-content{
   opacity:1;
   visibility:visible;
-  transform: translateY(0);
+  transform:translateY(0) scale(1);
 }
 
 /* =========================
-   IMAGEN
+   IMAGEN PRO
 ========================= */
 .imagen{
   display:flex;
   justify-content:center;
   align-items:center;
-  background:#000;
   position:relative;
-  z-index: 1; /* Imagen en nivel bajo */
 }
 
 .imagen img{
   width:90%;
   max-width:500px;
-  border-radius:12px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.4);
+  border-radius:15px;
+
+  box-shadow:
+  0 15px 35px rgba(0,0,0,0.7),
+  0 0 20px rgba(57,210,230,0.3);
+
+  transition:0.3s;
+}
+
+.imagen img:hover{
+  transform:scale(1.05);
 }
 
 /* =========================
    FOOTER
 ========================= */
 footer{
-  background:var(--azul-marino);
-  color:white;
+  background:linear-gradient(90deg, var(--azul-oscuro), var(--negro));
+  color:var(--blanco);
   text-align:center;
   padding:15px;
-  position: relative;
-  z-index: 5;
+}
+
+/* =========================
+   ANIMACIONES
+========================= */
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 /* =========================
@@ -245,22 +295,27 @@ footer{
   }
 
   .columna{
-    padding: 30px 20px;
+    padding:30px 20px;
   }
 
   .botones{
     flex-direction:column;
-    align-items: stretch;
+    align-items:stretch;
   }
 
-  .btn-regresar, .dropbtn {
-    width: 100%;
+  .btn-regresar,
+  .dropbtn{
+    width:100%;
   }
 
-  .dropdown-content {
-    width: 100%;
-    position: absolute; /* Aseguramos que flote sobre el contenido de abajo */
-    left: 0;
-    top: 100%;
+  .dropdown-content{
+    width:100%;
   }
+}
+
+/* =========================
+   TRANSICIÓN ENTRE PÁGINAS
+========================= */
+body.fade-out{
+  opacity:0;
 }
